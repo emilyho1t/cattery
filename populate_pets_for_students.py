@@ -20,14 +20,6 @@ def populate():
             add_cat(st, each_cat)
 
 
-    # for individual in Student.objects.all():
-    #     individual.number_of_cats = individual.cat_set.count()
-    #     individual.save()
-
-    # for c in Student.objects.all():
-    #     for p in Cat.objects.filter(student=c):
-    #         print(f'- {c}: {p}')
-
 def add_cat(student, name):
     c = Cat.objects.get_or_create(students=student, name=name)[0]
     c.save()
