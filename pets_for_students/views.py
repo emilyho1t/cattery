@@ -7,7 +7,6 @@ from pets_for_students.models import Cat
 def index(request):
     students_list = Student.objects.order_by('last_name', 'first_name')
     cats_list = Cat.objects.order_by('name')
-    #number = Student.number_of_cats
 
 
     context_dict = {}
