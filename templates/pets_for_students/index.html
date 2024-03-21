@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+
+{% load staticfiles %}
+
+<html>
+
+    <head>
+        <title>pets-for-students</title>
+    </head>
+
+    <body>
+        <div>
+            <img src="{% static 'images/cat.png' %}"
+                alt="Picture of a Cat" />
+        </div>
+        <h1>The Students and their cats are:</h1> 
+        <div>
+            hey there partner! <br /> 
+            <strong>{{ boldmessage }}</strong><br />
+        </div> 
+        <div>
+            <a href="/pets_for_students/pets/">About Pets of Students</a><br />
+        </div>
+    </body>
+
+</html>
