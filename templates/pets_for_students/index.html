@@ -6,7 +6,37 @@
 
     <head>
         <title>pets-for-students</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #ece9e6;
+                margin: 20;
+                padding: 20;
+            }
+            h1 {
+                color: #3140c9;
+            }
+            img {
+                width: 200px;
+                height: auto;
+            }
+            ul {
+                color: #1032bb;
+                padding: 20;
+            }
+            li {
+                margin-bottom: 10px;
+            }
+            a {
+                color: #d74e4e;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>
     </head>
+    
 
     <body>
         <div>
@@ -15,8 +45,20 @@
         </div>
         <h1>The Students and their cats are:</h1> 
         <div>
-            hey there partner! <br /> 
-            <strong>{{ boldmessage }}</strong><br />
+            <ul>
+                {% for student in students %}
+                <li>{{student}} has <strong>{{student.number_of_cats}}</strong> cat{% if student.number_of_cats != 1 %}s{% endif %}</li>
+                <ul>
+                {% for cat in cats %}
+                    {% if cat.students == student %}
+                        <li>{{ cat }}</li>
+                    {% endif %}
+                {% endfor %}
+                </ul>
+            {% endfor %}
+                </div>
+             
+
         </div> 
         <div>
             <a href="/pets_for_students/pets/">About Pets of Students</a><br />
